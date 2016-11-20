@@ -52,10 +52,10 @@ plt.show()
 # Aufgabe 6 (Lösen von Gleichungen/Ungleichungen)
 ###############################################################################
 
+# (a)
 plt.axis([x_min, x_max, y_min, y_max])
 plt.grid(True)
 
-# (a)
 def f_left(x):
     return abs(x + 4)
 
@@ -65,3 +65,22 @@ def f_right(x):
 plt.plot(x, f_left(x), x, f_right(x))
 plt.show()
 
+# (b)
+x_min = -10.0
+x_max = 20.0
+x_step = 0.1
+y_min = -10.0
+y_max = 10.0
+
+x = np.arange(x_min, x_max+1, x_step)
+plt.axis([x_min, x_max, y_min, y_max])
+plt.grid(True)
+
+def f_left(x):
+    return (x**2 - 40*x -73)/(-3*x**2 - 4)
+
+def f_right(x):
+    return x/x # small hack to return always 1.0
+
+plt.plot(x, f_left(x), x, f_right(x))
+plt.show()
