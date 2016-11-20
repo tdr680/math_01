@@ -84,3 +84,30 @@ def f_right(x):
 
 plt.plot(x, f_left(x), x, f_right(x))
 plt.show()
+
+
+###############################################################################
+# Aufgabe 11 (Kartesisches Produkt)
+###############################################################################
+
+# (a)
+plt.axis([-4, 4, -4, 4])
+plt.grid(True)
+
+import itertools
+
+def cartesian_product(*sets):
+    res_x = []
+    res_y = []
+    for i in itertools.product(*sets):
+        res_x.append(i[0])
+        res_y.append(i[1])
+    return (res_x, res_y)
+
+set_x = Set([-2, 0, 2, 3])
+set_y = Set([-1, 2, 3])
+
+(x, y) = cartesian_product(set_x, set_y)
+
+plt.scatter(x, y)
+plt.show()
