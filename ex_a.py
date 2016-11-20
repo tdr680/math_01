@@ -46,3 +46,22 @@ def f_b(x):
 
 plt.plot(x, f_a(x), x, f_b(x))
 plt.show()
+
+
+###############################################################################
+# Aufgabe 6 (Lösen von Gleichungen/Ungleichungen)
+###############################################################################
+
+plt.axis([x_min, x_max, y_min, y_max])
+plt.grid(True)
+
+# (a)
+def f_left(x):
+    return abs(x + 4)
+
+def f_right(x):
+    return 3 * abs(x - 2) + x
+
+plt.plot(x, f_left(x), x, f_right(x))
+plt.show()
+
